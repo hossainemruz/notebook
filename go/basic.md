@@ -160,3 +160,67 @@ const b = math.Sqrt(4)//not allowed
 ```
 
 **b** is a constant and the value of **b** needs to be know at compile time. The function math.Sqrt(4) will be evaluated only during run time and hence const b = math.Sqrt(4) throws error.
+
+>**Go is strongly typed language. So, mixing type during assignment is not allowed**.
+
+Hence,
+
+```go
+var defaultName = "Sam" //allowed. type of defaultName is "string"
+type myString string
+var customName myString = "Sam" //allowed. type of customName is "myString"
+customName = defaultName //not allowed. Error: cannot use defaultName (type string) as type myString in assignment
+```
+
+Although `myString` is alias of `string`, Go does not allow to assign `string` type variable into `myString` type variable.
+
+>**Constant does not have a type. They can provide a type on the fly depending on the context.**
+
+For example,
+
+```go
+package main
+import "fmt"
+
+func main() {
+    const name = "Sam"
+    const age = 24
+    fmt.Printf("value: %v type: %T\n", name, name)
+    fmt.Printf("value: %v type: %T\n", age, age)
+}
+```
+
+Output:
+
+```ini
+value: Sam type: string
+value: 24 type: int
+```
+
+Again,
+
+```go
+package main
+import "fmt"
+
+func main() {  
+    const a = 5
+    var intVar int = a
+    var int32Var int32 = a
+    var float64Var float64 = a
+    var complex64Var complex64 = a
+    fmt.Println("intVar",intVar, "\nint32Var", int32Var, "\nfloat64Var", float64Var, "\ncomplex64Var",complex64Var)
+}
+```
+
+Output:
+
+```ini
+intVar 5
+int32Var 5
+float64Var 5
+complex64Var (5+0i)
+```
+
+This program does not give any error because **a** is constant, so it does not have any type. When **a** is assigned to different type variable, it is taking type of this variable.
+*Ref:* [GOLANGBOT.COM](https://golangbot.com/constants/)
