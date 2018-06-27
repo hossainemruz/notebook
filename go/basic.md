@@ -9,6 +9,12 @@
         - [Multiple variable declaration](#multiple-variable-declaration)
         - [Short hand declaration](#short-hand-declaration)
     - [Constant](#constant)
+    - [Functions](#functions)
+    - [Packages](#packages)
+        - [main function and main package](#main-function-and-main-package)
+        - [Exported Names](#exported-names)
+        - [init function](#init-function)
+        - [Use of blank identifier](#use-of-blank-identifier)
 
 <!-- /TOC -->
 
@@ -223,4 +229,272 @@ complex64Var (5+0i)
 ```
 
 This program does not give any error because **a** is constant, so it does not have any type. When **a** is assigned to different type variable, it is taking type of this variable.
+
 *Ref:* [GOLANGBOT.COM](https://golangbot.com/constants/)
+
+## Functions
+
+A function is a block of code that performs a specific task.
+
+**Structure:**
+
+```go
+func functionname(parametername type) returntype {  
+ //function body
+}
+```
+
+**Sample function:**
+
+```go
+func calculateBill(price int, no int) int {  
+    var totalPrice = price * no
+    return totalPrice
+}
+```
+
+If consecutive parameters has same type, writing type each time can be avoided by writing once at the end.
+
+```go
+func calculateBill(price, no int) int {  
+    var totalPrice = price * no
+    return totalPrice
+}
+```
+
+**Multiple return value:**
+
+```go
+func rectProps(length, width float64)(float64, float64) {  
+    var area = length * width
+    var perimeter = (length + width) * 2
+    return area, perimeter
+}
+```
+
+**Named returned value:**
+
+If a return value is named, it will be considered as a variable declared at the first line of the function. They don't need to return explicitly.
+
+```go
+func rectProps(length, width float64)(area, perimeter float64) {  
+    area = length * width
+    perimeter = (length + width) * 2
+    return //no explicit return value
+}
+```
+
+**Blank identifier:**
+_ is know as the blank identifier in Go. It can be used in place of any value of any type. It is used to discard a returned value.
+
+```go
+func rectProps(length, width float64) (float64, float64) {  
+    var area = length * width
+    var perimeter = (length + width) * 2
+    return area, perimeter
+}
+func main() {  
+    area, _ := rectProps(10.8, 5.6) // perimeter is discarded
+    fmt.Printf("Area %f ", area)
+}
+```
+
+## Packages
+
+Packages are used to organise go source code for better reusability and readability.
+
+### main function and main package
+
+Every executable go application must contain a main function. This function is the entry point for execution. The main function should reside in the main package.
+
+>**First line of every go source file should be `package packagename` which indicate that this source file belong to which pakage.**
+
+>**Source files belonging to a package should be placed in separate folders of their own. It is a convention in Go to name this folder with the same name of the package.**
+
+*Package Example:*
+
+Sample Go project structure:
+
+```ini
+src
+ |-- geometry
+        |-- geometry.go
+        |-- rectangle
+                |-- rectprops.go
+```
+
+rectangle package:
+
+```go
+//rectprops.go
+package rectangle
+
+import "math"
+
+func Area(len, wid float64) float64 {  
+    area := len * wid
+    return area
+}
+
+func Diagonal(len, wid float64) float64 {  
+    diagonal := math.Sqrt((len * len) + (wid * wid))
+    return diagonal
+}
+```
+
+main package:
+
+```go
+//geometry.go
+package main 
+
+import (  
+    "fmt"
+    "geometry/rectangle" //importing custom package
+)
+
+func main() {  
+    var rectLen, rectWidth float64 = 6, 7
+    fmt.Println("Geometrical shape properties")
+        /*Area function of rectangle package used
+        */
+    fmt.Printf("area of rectangle %.2f\n", rectangle.Area(rectLen, rectWidth))
+        /*Diagonal function of rectangle package used
+        */
+    fmt.Printf("diagonal of the rectangle %.2f ",rectangle.Diagonal(rectLen, rectWidth))
+}
+```
+
+### Exported Names
+
+Any variable or function which starts with a capital letter are exported names in go. Only exported functions and variables can be accessed from other packages.
+
+### init function
+
+Every package can have init function.
+
+>**The init function should not have any return type and should not have any parameters.**
+
+>**The init function cannot be called explicitly in our source code.**
+
+*init function structure:*
+
+```go
+func init() {  
+}
+```
+
+>**The init function can be used to perform initialisation tasks and can also be used to verify the correctness of the program before the execution starts.**
+
+**The order of initialisation of a package:**
+
+1. If a package imports other packages, the imported packages are initialised first.
+
+2. Package level variables are initialised first.
+
+3. init function is called next. A package can have multiple init functions (either in a single file or distributed across multiple files) and they are called in the order in which they are presented to the compiler.
+
+>A package will be initialised only once even if it is imported from multiple packages.
+
+**Initialisation Example:**
+
+*rectangle package:*
+
+```go
+//rectprops.go
+package rectangle
+
+import "math"  
+import "fmt"
+
+/*
+ * init function added
+ */
+func init() {  
+    fmt.Println("rectangle package initialized")
+}
+func Area(len, wid float64) float64 {  
+    area := len * wid
+    return area
+}
+
+func Diagonal(len, wid float64) float64 {  
+    diagonal := math.Sqrt((len * len) + (wid * wid))
+    return diagonal
+}
+```
+
+*main package:*
+
+```go
+//geometry.go
+package main 
+
+import (  
+    "fmt"
+    "geometry/rectangle" //importing custom package
+    "log"
+)
+/*
+ * 1. package variables
+*/
+var rectLen, rectWidth float64 = 6, 7 
+
+/*
+*2. init function to check if length and width are greater than zero
+*/
+func init() {  
+    println("main package initialized")
+    if rectLen < 0 {
+        log.Fatal("length is less than zero")
+    }
+    if rectWidth < 0 {
+        log.Fatal("width is less than zero")
+    }
+}
+
+func main() {  
+    fmt.Println("Geometrical shape properties")
+    fmt.Printf("area of rectangle %.2f\n", rectangle.Area(rectLen, rectWidth))
+    fmt.Printf("diagonal of the rectangle %.2f ",rectangle.Diagonal(rectLen, rectWidth))
+}
+```
+
+Output:
+
+```console
+rectangle package initialized  
+main package initialized  
+Geometrical shape properties  
+area of rectangle 42.00  
+diagonal of the rectangle 9.22  
+```
+
+The order of initialisation of main package,
+
+1. Imported package are initialized first. Hence, **rectangle** package will be initialized first.
+
+2. Package level variable `rectLen` and `rectWidth` are initialized then.
+
+3. Then, *init* function of main package is called.
+
+4. Finally, *main* function is called.
+
+### Use of blank identifier
+
+Go does not allow to import any package without using it. So,
+
+- If we want to import a package without using now but we may use later.
+
+- Or, we want to make sure that initialization of a particular pakage happen even though we don't want to use it.
+
+We can use blank identifier ( _ ).
+
+```go
+package main
+import (
+     _ "geometry/rectangle"
+)
+func main() {
+}
+```
