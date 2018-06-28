@@ -15,6 +15,9 @@
         - [Exported Names](#exported-names)
         - [init function](#init-function)
         - [Use of blank identifier](#use-of-blank-identifier)
+    - [Conditional statement (if else)](#conditional-statement-if-else)
+    - [Loop](#loop)
+    - [Switch Statement](#switch-statement)
 
 <!-- /TOC -->
 
@@ -496,5 +499,128 @@ import (
      _ "geometry/rectangle"
 )
 func main() {
+}
+```
+
+## Conditional statement (if else)
+
+ **Simple `if` structure:**
+
+ ```go
+ if condition {
+     //statement
+}
+ ```
+
+**`if-else` statement:**
+
+```go
+if condition {
+    //statement
+} else {
+    //statement
+}
+```
+
+**`if - else if - else` chain:**
+
+```go
+if condition {  
+    //statement
+} else if condition {
+    //statement
+} else {
+    //statement
+}
+```
+
+**`if` variant:**
+
+```go
+if statement; condition {  
+    //statement
+}
+```
+
+## Loop
+
+Go has only **for** loop.
+
+**`for` loop structure:**
+
+```go
+for initialisation; condition; post { 
+    //statement
+}
+```
+
+*Example:*
+
+```go
+for i := 1; i <= 10; i++ {
+    fmt.Printf(" %d",i)
+}
+```
+
+**`break`**
+
+```go
+for i := 1; i <= 10; i++ {
+    if i > 5 {
+        break //loop is terminated if i > 5
+    }
+    fmt.Printf("%d ", i)
+}
+```
+
+**`continue`**
+
+```go
+for i := 1; i <= 10; i++ {
+    if i%2 == 0 {
+        continue
+    }
+    fmt.Printf("%d ", i)
+}
+```
+
+*Variant:*
+
+```go
+for ;i <= 10; { // initialisation and post are omitted
+    fmt.Printf("%d ", i)
+    i += 2
+}
+```
+
+```go
+//multiple initialisation and increment
+for no, i := 10, 1; i <= 10 && no <= 19; i, no = i+1, no+1 {
+    fmt.Printf("%d * %d = %d\n", no, i, no*i)
+}
+```
+
+**Infinite loop:**
+
+```go
+for {  
+    // statement
+}
+```
+
+## Switch Statement
+
+**Structure:**
+
+```go
+switch finger {
+case 1:
+    // statement
+case 2:
+    // statement
+case 3:
+    // statement
+default:
+    // statement
 }
 ```
