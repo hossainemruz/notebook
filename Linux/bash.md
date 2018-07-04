@@ -1,3 +1,20 @@
+- [Bash Basic](#bash-basic)
+  - [Some tricks](#some-tricks)
+    - [Check if a file exist](#check-if-a-file-exist)
+    - [`if [ "${1:0:1}" = '-' ]; then`](#if--%22101%22-----then)
+
+# Bash Basic
+
+## Some tricks
+
+### Check if a file exist
+
+```bash
+if [ ! -f /tmp/foo.txt ]; then
+    echo "File not found!"
+fi
+```
+
 > Bash Ref:
 > https://tiswww.case.edu/php/chet/bash/bashref.html
 
