@@ -4,9 +4,12 @@
 - [Learned English Words](#learned-english-words)
     - [General](#general)
         - [assimilation](#assimilation)
+        - [hinder](#hinder)
         - [inference](#inference)
+        - [perceptual](#perceptual)
         - [stunt](#stunt)
         - [topple](#topple)
+        - [spurt](#spurt)
         - [unprecedented](#unprecedented)
 
 <!-- /TOC -->
@@ -51,6 +54,18 @@ The process of becoming similar to something.
 **Synnonyms:**
 ...
 
+### hinder
+
+**Meaning:**
+Make it difficult for (someone) to do something or for (something) to happen.
+**Example:**
+
+1. Language barriers hindered communication between scientists.
+
+**Synnonyms:**
+**hamper**, be a hindrance to, **obstruct**, impede, inhibit, retard, baulk, thwart, foil, baffle, curb, delay, arrest, interfere with, set back, slow down, hold back, hold up, forestall, stop, halt.
+
+
 ### inference
 
 **Type:** `noun`
@@ -67,6 +82,15 @@ A conclusion reached on the basis of evidence and reasoning.
 **Synnonyms:**
 **deduction**, conclusion, reasoning, conjecture, speculation,heorizing, hypothesizing.
 
+### perceptual
+
+**Meaning:**
+Relating to the ability to interpret or become aware of something through the senses.
+**Example:**
+
+1. A patient with perceptual problems who cannot judge distances.
+2. Let the audience see the truth or the perceptual truth and decide for themselves.
+
 ### stunt
 
 **Type:** `VERB`
@@ -75,11 +99,13 @@ A conclusion reached on the basis of evidence and reasoning.
 Prevent from growing or developing properly.
 **Example:**
 
-1. Some weeds(আগাছা) produce chemicals that stunt the plant's growth.
+1. We stunt our growth when we ignore disconfirming evidence or distort evidence in order to make it assimilate with our existing knowledge.
 
-2. The recovery of our industries is stunted by lack of funds.
+2. Some weeds(আগাছা) produce chemicals that stunt the plant's growth.
 
-3. Her growth had been stunted by a childhood disease.
+3. The recovery of our industries is stunted by lack of funds.
+
+4. Her growth had been stunted by a childhood disease.
 
 **Meaning-2:**
 An action displaying spectacular skill and daring.
@@ -118,6 +144,29 @@ Remove (a government or person in authority) from power; overthrow.
 
 **Synnonyms:**
 ...
+
+### spurt
+
+**Type:** `VERB/NOUN`
+
+**Meaning-1:**
+Gush out in a sudden and forceful stream.
+**Example:**
+
+1. He cut his finger, and blood spurted over the sliced potatoes.
+
+**Meaning-2:**
+A sudden marked burst or increase of activity or speed.
+**Example:**
+
+1. We go through a growth spurt when we actively search for disconfirming evidence and allow accomodation to happen.
+
+2. Late in the race he put on a spurt and reached second place.
+
+**Synnonyms:**
+
+1. squirt, shoot, spray, fountain, jet, erupt.
+2. burst of speed, turn of speed, increase of speed, burst of energy, sprint, rush.
 
 ### unprecedented
 
