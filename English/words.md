@@ -5,6 +5,8 @@
     - [General](#general)
         - [assimilation](#assimilation)
         - [inference](#inference)
+        - [stunt](#stunt)
+        - [topple](#topple)
         - [unprecedented](#unprecedented)
 
 <!-- /TOC -->
@@ -64,6 +66,58 @@ A conclusion reached on the basis of evidence and reasoning.
 
 **Synnonyms:**
 **deduction**, conclusion, reasoning, conjecture, speculation,heorizing, hypothesizing.
+
+### stunt
+
+**Type:** `VERB`
+
+**Meaning-1:**
+Prevent from growing or developing properly.
+**Example:**
+
+1. Some weeds(আগাছা) produce chemicals that stunt the plant's growth.
+
+2. The recovery of our industries is stunted by lack of funds.
+
+3. Her growth had been stunted by a childhood disease.
+
+**Meaning-2:**
+An action displaying spectacular skill and daring.
+**Examples:**
+
+1. The most thrilling displays were the equestrian(ঘোড়া নিয়ে) jumps and the motorcycle stunts.
+
+**Meaning-3:**
+Something unusual done to attract attention.
+**Example:**
+
+1. The story was spread as a publicity stunt to help sell books.
+
+**Synnonyms:**
+
+1. **inhibit**, impede, hamper, hinder, restrict, retard, slow, curb, arrest, check, stop.
+
+2. **feat**, exploit, trick, antic, caper.
+
+### topple
+
+**Type:** `VERB`
+
+**Meaning-1:**
+Overbalance or cause to overbalance and fall.
+**Example:**
+
+1. She toppled over when I touched her.
+2. The push almost toppled him to the ground.
+
+**Meaning-2:**
+Remove (a government or person in authority) from power; overthrow.
+**Example:**
+
+1. Disagreement had threatened to topple the government.
+
+**Synnonyms:**
+...
 
 ### unprecedented
 
