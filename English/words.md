@@ -3,6 +3,7 @@
 
 - [Learned English Words](#learned-english-words)
     - [General](#general)
+        - [amortize](#amortize)
         - [assimilation](#assimilation)
         - [hinder](#hinder)
         - [inference](#inference)
@@ -11,6 +12,7 @@
         - [topple](#topple)
         - [spurt](#spurt)
         - [unprecedented](#unprecedented)
+        - [write-off](#write-off)
 
 <!-- /TOC -->
 In this file I will note down the english words I have learned.
@@ -18,6 +20,34 @@ In this file I will note down the english words I have learned.
 ## General
 
 This section contains general words.
+
+### amortize
+
+**Type:** `VERB`
+
+**Meaning-1:**
+Gradually write off the initial cost of (an asset) over a period.
+**Example:**
+
+1. The vessel's owners could not amortize her high capital costs.
+2. To amortize that investment, it is desirable that a given facility be designed to serve for several ecosystem generations.
+
+**Meaning-2:**
+Reduce or pay off (a debt) with regular payments.
+**Example:**
+
+1. Eighty per cent of the proceeds has been used to amortize the public debt.
+2. The following year a sinking fund was established in an effort to amortize the debt.
+
+**Meaning-3:**
+Transfer (land) to a corporation in mortmain.
+
+1. Lands amortized without licence.
+2. In 13 years, nobody has ever asked him to amortize the land we have used for parks.
+
+**Synnonyms:**
+
+1. **lessen**, make less, make smaller, lower, bring down, decrease, turn down, diminish, take the edge off, minimize.
 
 ### assimilation
 
@@ -183,6 +213,33 @@ Never done or known before.
 
 **Synnonyms:**
 **unparalleled**, unequalled, unmatched, unrivalled.
+
+### write-off
+
+**Meaning-1:** (British)
+A vehicle or other object that is too badly damaged to be repaired.
+**Example:**
+
+1. The passengers were unharmed, but my car was a total write-off.
+2. All four fuel tanks were ruptured(*burst suddenly*) and the aircraft declared a total write-off.
+
+**Meaning-2:**
+A worthless or ineffectual person or thing.
+**Example:**
+
+1. The magazine was a write-off, its credibility rating below zero.
+2. But it was not a write-off and the last three months were good.
+
+**Synnonyms:**
+
+1. **loser**, born loser, incompetent, non-achiever, underachiever, ne'er-do-well, disappointment.
+
+**Meaning-3:** (Finance)
+A cancellation from an account of a bad debt or worthless asset.
+**Example:**
+
+1. He said the package would include more aggressive measures to speed up bad debt write-offs and stabilize the banking system.
+2. Their profits are weakening thanks to loan write-offs.
 
 <!-- ### template
 
