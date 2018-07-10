@@ -2,6 +2,7 @@
   - [Some tricks](#some-tricks)
     - [Check if a file exist](#check-if-a-file-exist)
     - [`if [ "${1:0:1}" = '-' ]; then`](#if--%22101%22-----then)
+    - [find all find with specific extension of directory and its subdirectory](#find-all-find-with-specific-extension-of-directory-and-its-subdirectory)
 
 # Bash Basic
 
@@ -45,3 +46,9 @@ This is going to take a substring of **$1** from the **0th** to the **1st** char
 ```
 
 Ref: https://unix.stackexchange.com/questions/249869/meaning-of-101/249870
+
+### find all find with specific extension of directory and its subdirectory
+
+```console
+find . -type f -name "*.conf"
+```
