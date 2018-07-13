@@ -613,7 +613,7 @@ for {
 **Structure:**
 
 ```go
-switch finger {
+switch value {
 case 1:
     // statement
 case 2:
@@ -624,3 +624,57 @@ default:
     // statement
 }
 ```
+
+**Multiple Expression:**
+
+```go
+switch letter {
+    case "a", "e", "i", "o", "u": //multiple expressions in case
+        fmt.Println("vowel")
+    default:
+        fmt.Println("not a vowel")
+    }
+```
+
+**Expressionless switch:**
+
+switch is considered to be `switch true` and it will behave like `if - else if` chain.
+
+```go
+switch { // expression is omitted
+    case num >= 0 && num <= 50:
+        fmt.Println("num is greater than 0 and less than 50")
+    case num >= 51 && num <= 100:
+        fmt.Println("num is greater than 51 and less than 100")
+    case num >= 101:
+        fmt.Println("num is greater than 100")
+    }
+```
+
+**Fallthrough:**
+
+When a case is executed, program control get out of the switch. A `fallthrough` statement is used to transfer control to the first statement of the case that is present immediately after the case which has been executed.
+
+```go
+switch num := number(); { //num is not a constant
+    case num < 50:
+        fmt.Printf("%d is lesser than 50\n", num)
+        fallthrough
+    case num < 100:
+        fmt.Printf("%d is lesser than 100\n", num)
+        fallthrough
+    case num < 200:
+        fmt.Printf("%d is lesser than 200", num)
+    }
+```
+
+Switch and case expressions need not be only constants. They can be evaluated at runtime too. In the program above num is initialised to the return value of the function number().
+
+If the number is 75 then output will be.
+
+```ini
+75 is lesser than 100  
+75 is lesser than 200
+```
+
+> `fallthrough` should be the last statement in a case. If it present somewhere in the middle, the compiler will throw error fallthrough statement out of place
