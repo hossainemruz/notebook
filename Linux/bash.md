@@ -1,7 +1,8 @@
 - [Bash Basic](#bash-basic)
   - [Some tricks](#some-tricks)
     - [Check if a file exist](#check-if-a-file-exist)
-    - [`if [ "${1:0:1}" = '-' ]; then`](#if--%22101%22-----then)
+    - [Check first character of a string](#check-first-character-of-a-string)
+    - [Remove `space` from a string](#remove-space-from-a-string)
     - [find all find with specific extension of directory and its subdirectory](#find-all-find-with-specific-extension-of-directory-and-its-subdirectory)
 
 # Bash Basic
@@ -19,9 +20,30 @@ fi
 > Bash Ref:
 > https://tiswww.case.edu/php/chet/bash/bashref.html
 
-### `if [ "${1:0:1}" = '-' ]; then`
+### Check first character of a string
 
-This is going to take a substring of **$1** from the **0th** to the **1st** character. So you're going to get the first character and only the first character of the string.
+**Wildcard:**
+
+```bash
+str="/some/directory/file"
+if [[ $str == /* ]]; then
+  echo 1;
+else
+  echo 0;
+fi
+```
+
+**Substring expansion:**
+
+```bash
+if [[ ${str:0:1} == "/" ]] ; then
+  echo 1;
+else
+  echo 0;
+fi
+```
+
+This is going to take a substring of **str** starting at the **0th** character with length **1**.
 
 ```ini
   ${parameter:offset}
@@ -43,6 +65,38 @@ This is going to take a substring of **$1** from the **0th** to the **1st** char
           at  least  one space to avoid being confused with the :- expan-
           sion.  Substring indexing is zero-based unless  the  positional
           parameters are used, in which case the indexing starts at 1.
+```
+
+**Regex:**
+
+```bash
+if [[ $str =~ ^/ ]];then
+  echo 1;
+else
+  echo 0;
+fi
+```
+
+`^` indicates starting with.
+
+Ref: https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285
+
+### Remove `space` from a string
+
+```bash
+str=" This sentence contains leading trailing and intermediate whitespaces "
+
+## Remove leading whitespaces
+lstr="$( echo "${str}" | sed -e 's/^[[:space:]]*//')"
+echo "$lstr"
+
+## Remove trailing whitespaces
+tstr="$( echo "${str}" | sed -e 's/[[:space:]]*$//')"
+echo "$tstr"
+
+## Remove all white spaces
+astr="$( echo "${str}" | tr -d '[:space:]')"
+echo "$astr"
 ```
 
 Ref: https://unix.stackexchange.com/questions/249869/meaning-of-101/249870
