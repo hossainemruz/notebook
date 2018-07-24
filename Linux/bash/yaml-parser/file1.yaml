@@ -1,0 +1,30 @@
+## global definitions
+global: 
+  debug: yes
+  verbose: no
+  debugging:
+    detailed: no
+    header: "debugging started"   
+
+## output
+output:
+  file: "yes"
+
+path:
+  data: /var/lib/elasticsearch
+  logs: /var/log/elasticsearch
+node.name:    ${HOSTNAME}
+network.host: ${ES_NETWORK_HOST}
+
+node:
+  name: ${prompt.text}
+
+Level1Line1:
+  Level2Line1: "this is a text."
+  Level2Line2:
+    Level3Line1: "another text."
+    Level3Line2:
+      Level4Line1: "this line from level 4"
+    Level3Line3: "this is from level3"
+  Level2Line3: "this is from level2"
+Level1Line2: "This is level 1 line"
