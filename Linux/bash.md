@@ -1,10 +1,13 @@
 - [Bash Basic](#bash-basic)
-  - [Some tricks](#some-tricks)
-    - [Check if a file exist](#check-if-a-file-exist)
-    - [Check first character of a string](#check-first-character-of-a-string)
-    - [Remove `space` from a string](#remove-space-from-a-string)
-    - [find all find with specific extension of directory and its subdirectory](#find-all-find-with-specific-extension-of-directory-and-its-subdirectory)
-    - [Parse file with shell script](#parse-file-with-shell-script)
+    - [Some tricks](#some-tricks)
+        - [Check if a file exist](#check-if-a-file-exist)
+        - [Check first character of a string](#check-first-character-of-a-string)
+        - [Remove `space` from a string](#remove-space-from-a-string)
+        - [find all find with specific extension of directory and its subdirectory](#find-all-find-with-specific-extension-of-directory-and-its-subdirectory)
+        - [Parse file with shell script](#parse-file-with-shell-script)
+        - [declare a array](#declare-a-array)
+        - [check if a string/line exist in a file](#check-if-a-stringline-exist-in-a-file)
+        - [replace whole line in of a file that match a pattern](#replace-whole-line-in-of-a-file-that-match-a-pattern)
 
 # Bash Basic
 
@@ -150,3 +153,73 @@ fi
 # Now run docker-entrypoint.sh and send the parsed configs as arguments to it
 $cmd
 ```
+
+### declare a array
+
+We can declare array in bash script using,
+
+```bash
+declare -a prefixArray
+```
+
+Now, we can put data on array at any index. Array is 0 indexed.
+
+```bash
+prefixArray[INDEX]=VALUE
+prefixArray[0]="this is first element"
+```
+
+After using array clear the memory using `unset`,
+
+```bash
+unset prefixArray
+```
+
+### check if a string/line exist in a file
+
+**Syntax:**
+
+```bash
+if grep -Fxq "$WhatToFind" my_list.txt
+then
+    # code if found
+else
+    # code if not found
+fi
+```
+
+Here,
+
+- F: Affects how PATTERN is interpreted (fixed string instead of a regex)
+- x: Match whole line
+- q: Shhhhh... minimal printing
+
+**Example:**
+
+```bash
+if grep -q ^"$prefix:" out.yaml; then
+    echo "$prefix found in out.yaml"
+else
+    echo "Not found"
+fi
+```
+
+This check if `out.yaml` file has a line starting with `$prefix`.
+
+### replace whole line in of a file that match a pattern
+
+**Syntax:**
+
+```bash
+sed -i "/string or regex goes here/c\replace with this" fileName
+```
+
+Here, `-i` for replace in place and `c` is for change/replace.
+
+**Example:**
+
+```bash
+sed -i "/^$key:/c\\$line" out.yaml
+```
+
+This  replace the line that start with `$key` of `out.yaml` file with `$line`.
