@@ -11,6 +11,7 @@
         - [stunt](#stunt)
         - [topple](#topple)
         - [spurt](#spurt)
+        - [stagnant](#stagnant)
         - [unprecedented](#unprecedented)
         - [write-off](#write-off)
 
@@ -197,6 +198,30 @@ A sudden marked burst or increase of activity or speed.
 
 1. squirt, shoot, spray, fountain, jet, erupt.
 2. burst of speed, turn of speed, increase of speed, burst of energy, sprint, rush.
+
+### stagnant
+
+**Type:** `ADJECTIVE`
+
+**Meaning-1:**
+(of a body of water or the atmosphere of a confined space) having no current or flow and often having an unpleasant smell as a consequence.
+**Example:**
+
+1. Algae, that green stuff in stagnant water, produces huge quantities of oxygen.
+2. Plants can't breathe if their roots are immersed in stagnant water.
+
+**Synnonyms:**
+**still**, motionless, immobile, inert, lifeless, dead, standing, slack, static, stationary
+
+**Meaning-2:**
+Showing no activity; dull and sluggish.
+**Example:**
+
+1. Actually, I am stagnant in middle of the process.
+2. The region is economically and politically stagnant, with endemic poverty.
+
+**Synnonyms:**
+**inactive**, sluggish, slow, slow-moving, lethargic, static, flat, depressed, quiet, dull, declining, moribund, dying, dead, dormant, stagnating
 
 ### unprecedented
 
