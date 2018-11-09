@@ -393,7 +393,7 @@ func init() {
 
 1. If a package imports other packages, the imported packages are initialised first.
 
-2. Package level variables are initialised first.
+2. Package level variables are initialised then.
 
 3. init function is called next. A package can have multiple init functions (either in a single file or distributed across multiple files) and they are called in the order in which they are presented to the compiler.
 
