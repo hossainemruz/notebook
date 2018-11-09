@@ -1,6 +1,8 @@
 - [Some Tricks](#some-tricks)
-    - [Container](#container)
-        - [Inject an Executable Script into a Container](#inject-an-executable-script-into-a-container)
+  - [Container](#container)
+    - [Inject an Executable Script into a Container](#inject-an-executable-script-into-a-container)
+  - [Command](#command)
+    - [See log of the pods that match a pattern](#see-log-of-the-pods-that-match-a-pattern)
 
 # Some Tricks
 
@@ -53,3 +55,21 @@ spec:
 ```
 
 Ref: http://blog.phymata.com/2017/07/29/inject-an-executable-script-into-a-container-in-kubernetes/
+
+## Command
+
+Here, goes some command tricks.
+
+### See log of the pods that match a pattern
+
+**Format:**
+
+```
+kubectl logs -n <namespace> $(kubectl get pod -n <namespace> |  awk '/<pattern>/{print $1}') -f
+```
+
+**Example:**
+
+```
+kubectl logs -n kube-system $(kubectl get pod -n kube-system |  awk '/kube-proxy*/{print $1}') -f
+```
