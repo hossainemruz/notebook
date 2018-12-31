@@ -1,13 +1,16 @@
 - [Bash Basic](#bash-basic)
-    - [Some tricks](#some-tricks)
-        - [Check if a file exist](#check-if-a-file-exist)
-        - [Check first character of a string](#check-first-character-of-a-string)
-        - [Remove `space` from a string](#remove-space-from-a-string)
-        - [find all find with specific extension of directory and its subdirectory](#find-all-find-with-specific-extension-of-directory-and-its-subdirectory)
-        - [Parse file with shell script](#parse-file-with-shell-script)
-        - [declare a array](#declare-a-array)
-        - [check if a string/line exist in a file](#check-if-a-stringline-exist-in-a-file)
-        - [replace whole line in of a file that match a pattern](#replace-whole-line-in-of-a-file-that-match-a-pattern)
+  - [Some tricks](#some-tricks)
+    - [Check if a file exist](#check-if-a-file-exist)
+    - [Check first character of a string](#check-first-character-of-a-string)
+    - [Remove `space` from a string](#remove-space-from-a-string)
+    - [find all find with specific extension of directory and its subdirectory](#find-all-find-with-specific-extension-of-directory-and-its-subdirectory)
+    - [Parse file with shell script](#parse-file-with-shell-script)
+    - [declare a array](#declare-a-array)
+    - [check if a string/line exist in a file](#check-if-a-stringline-exist-in-a-file)
+    - [replace whole line in of a file that match a pattern](#replace-whole-line-in-of-a-file-that-match-a-pattern)
+    - [Use Bearer Token for authetication](#use-bearer-token-for-authetication)
+      - [wget](#wget)
+      - [curl](#curl)
 
 # Bash Basic
 
@@ -223,3 +226,33 @@ sed -i "/^$key:/c\\$line" out.yaml
 ```
 
 This  replace the line that start with `$key` of `out.yaml` file with `$line`.
+
+### Use Bearer Token for authetication
+
+#### wget
+
+**Syntax:**
+
+```bash
+wget --header="Authorization: Bearer ${TOKEN}" ${URL}
+```
+
+**Example:**
+
+```bash
+wget --header="Authorization: Bearer ${TOKEN}" https://sandbox.xill.io/v2/contents/5a184d0207903113023b5aaa/SANDBOX.md --no-check-certificate
+```
+
+#### curl
+
+**Syntax:**
+
+```bash
+curl -H 'Accept: application/json' -H "Authorization: Bearer ${TOKEN}" ${URL}
+```
+
+**Example:**
+
+```bash
+curl -H 'Accept: application/json' -H "Authorization: Bearer ${TOKEN}" https://{hostname}/api/myresource
+```
