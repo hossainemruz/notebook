@@ -11,6 +11,7 @@
     - [Use Bearer Token for authetication](#use-bearer-token-for-authetication)
       - [wget](#wget)
       - [curl](#curl)
+    - [`pipe` Explained](#pipe-explained)
 
 # Bash Basic
 
@@ -256,3 +257,7 @@ curl -H 'Accept: application/json' -H "Authorization: Bearer ${TOKEN}" ${URL}
 ```bash
 curl -H 'Accept: application/json' -H "Authorization: Bearer ${TOKEN}" https://{hostname}/api/myresource
 ```
+
+### `pipe` Explained
+
+Link: https://brandonwamboldt.ca/how-linux-pipes-work-under-the-hood-1518/
