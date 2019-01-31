@@ -8,3 +8,7 @@
 **Articles:**
 
 - [ ] [Functional Go](https://medium.com/@geisonfgfg/functional-go-bc116f4c96a4)
+
+**Golang Tutorial:**
+
+- [ ] [golangspec :To understand Go’s specification](https://medium.com/golangspec)
