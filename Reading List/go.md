@@ -12,3 +12,10 @@
 **Golang Tutorial:**
 
 - [ ] [golangspec :To understand Go’s specification](https://medium.com/golangspec)
+
+**Go Gurbage Collector:**
+
+- [ ] [Getting to Go: The Journey of Go's Garbage Collector](https://blog.golang.org/ismmkeynote)
+- [x] [Golang’s Real-time GC in Theory and Practice](https://making.pusher.com/golangs-real-time-gc-in-theory-and-practice/)
+- [ ] [Modern garbage collection](https://blog.plan99.net/modern-garbage-collection-911ef4f8bd8e)
+- [ ] [Allocator Wrestling](https://speakerdeck.com/emfree/allocator-wrestling)
