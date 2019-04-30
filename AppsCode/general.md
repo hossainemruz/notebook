@@ -1,6 +1,7 @@
 
 - [General Notes](#general-notes)
   - [Render AppsCode website locally](#render-appscode-website-locally)
+  - [Crop and Export SVG from Inkscape](#crop-and-export-svg-from-inkscape)
 
 # General Notes
 
@@ -56,3 +57,13 @@ This file contains common notes for AppsCode products.
 ```console
 rm -rf ./content/products/stash/0.8.3/* && cp -r /home/emruz/go/src/github.com/appscode/stash/docs/* ./content/products/stash/0.8.3/ && gulp
 ```
+
+## Crop and Export SVG from Inkscape
+
+- Crop Image: [How to crop image in Inkscape](https://www.youtube.com/watch?v=ik3mCOdE4T8)
+- Export Cropped Image:
+  - Select the object(s) to export.
+  - "Resize page to drawing or selection" with `Ctrl+Shift+R`.
+  - "Invert selection" with `!`, and `Del` all other objects.
+  - "Save As" with `Ctrl+Shift+S`.
+  - Select Optimized SVG as the format if you want to use it on the web.
