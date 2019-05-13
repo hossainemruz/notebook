@@ -2,6 +2,7 @@
 - [General Notes](#general-notes)
   - [Render AppsCode website locally](#render-appscode-website-locally)
   - [Crop and Export SVG from Inkscape](#crop-and-export-svg-from-inkscape)
+  - [Load docker image directly into minikube](#load-docker-image-directly-into-minikube)
 
 # General Notes
 
@@ -67,3 +68,9 @@ rm -rf ./content/products/stash/0.8.3/* && cp -r /home/emruz/go/src/github.com/a
   - "Invert selection" with `!`, and `Del` all other objects.
   - "Save As" with `Ctrl+Shift+S`.
   - Select Optimized SVG as the format if you want to use it on the web.
+
+## Load docker image directly into minikube
+
+```console
+docker save appscodeci/stash:cluster-backup | (eval $(minikube docker-env) && docker load)
+```
