@@ -3,6 +3,7 @@
   - [Render AppsCode website locally](#render-appscode-website-locally)
   - [Crop and Export SVG from Inkscape](#crop-and-export-svg-from-inkscape)
   - [Load docker image directly into minikube](#load-docker-image-directly-into-minikube)
+  - [Update repo dependency using go mod](#update-repo-dependency-using-go-mod)
 
 # General Notes
 
@@ -74,3 +75,15 @@ rm -rf ./content/products/stash/0.8.3/* && cp -r /home/emruz/go/src/github.com/a
 ```console
 docker save appscodeci/stash:cluster-backup | (eval $(minikube docker-env) && docker load)
 ```
+
+## Update repo dependency using go mod
+
+When you update any go module repo, use this syntax
+
+```console
+go get -u=patch githubc.com/xyz/project@version
+go mod tidy
+go mod vendor
+```
+
+`-u=patch` is necessary to make sure only the necessary stuff is changed or updated.
