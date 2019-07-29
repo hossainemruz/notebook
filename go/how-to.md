@@ -1,6 +1,7 @@
 - [How to do it in `go` ?](#how-to-do-it-in-go-)
   - [How to check if a program is installed or not?](#how-to-check-if-a-program-is-installed-or-not)
   - [How to know the path where a program is installed?](#how-to-know-the-path-where-a-program-is-installed)
+  - [How to force `go build` to use vendor?](#how-to-force-go-build-to-use-vendor)
 
 # How to do it in `go` ?
 
@@ -52,4 +53,12 @@ func main() {
 
   fmt.Printf("Program %q installed in %q directory.\n",programName,installationPath)
 }
+```
+
+## How to force `go build` to use vendor?
+
+Use `-mod vendor` parameter while building.
+
+```console
+go build -mod vendor ./...
 ```
