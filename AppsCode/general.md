@@ -4,6 +4,8 @@
   - [Crop and Export SVG from Inkscape](#crop-and-export-svg-from-inkscape)
   - [Load docker image directly into minikube](#load-docker-image-directly-into-minikube)
   - [Update repo dependency using go mod](#update-repo-dependency-using-go-mod)
+  - [Set proxy in linux terminal](#set-proxy-in-linux-terminal)
+  - [Set DNS server in linux](#set-dns-server-in-linux)
 
 # General Notes
 
@@ -87,3 +89,48 @@ go mod vendor
 ```
 
 `-u=patch` is necessary to make sure only the necessary stuff is changed or updated.
+
+## Set proxy in linux terminal
+
+Export the following environment variables:
+
+```console
+export http_proxy='http://<proxyServer address>:<proxy port>'
+export https_proxy='https://<proxyServer address>:<proxy port>'
+```
+
+List of open proxy server:
+
+- [Proxynova](https://www.proxynova.com/proxy-server-list/)
+- [Free Proxy List](https://free-proxy-list.net/)
+
+Disable proxy:
+
+```console
+unset http_proxy
+unset https_proxy
+```
+
+## Set DNS server in linux
+
+1. Install the `resolvconf` package.
+
+    ```console
+    sudo apt install resolvconf
+    ```
+
+2. Edit `/etc/resolvconf/resolv.conf.d/head` and add the following:
+
+    ```txt
+    # Make edits to /etc/resolvconf/resolv.conf.d/head.
+    nameserver 8.8.4.4
+    nameserver 8.8.8.8
+    ```
+
+3. Restart the `resolvconf` service.
+
+    ```console
+    sudo service resolvconf restart
+    ```
+
+Ref: https://datawookie.netlify.com/blog/2018/10/dns-on-ubuntu-18.04/
