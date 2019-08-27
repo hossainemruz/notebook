@@ -1,8 +1,18 @@
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
 - [Some Tricks](#some-tricks)
   - [Container](#container)
     - [Inject an Executable Script into a Container](#inject-an-executable-script-into-a-container)
-  - [Command](#command)
+  - [Commands](#commands)
     - [See log of the pods that match a pattern](#see-log-of-the-pods-that-match-a-pattern)
+    - [See logs of all container in a pod](#see-logs-of-all-container-in-a-pod)
+    - [See logs of a container that has crashed](#see-logs-of-a-container-that-has-crashed)
+
+<!-- /code_chunk_output -->
+
 
 # Some Tricks
 
@@ -56,7 +66,7 @@ spec:
 
 Ref: http://blog.phymata.com/2017/07/29/inject-an-executable-script-into-a-container-in-kubernetes/
 
-## Command
+## Commands
 
 Here, goes some command tricks.
 
@@ -64,12 +74,28 @@ Here, goes some command tricks.
 
 **Format:**
 
-```
+```console
 kubectl logs -n <namespace> $(kubectl get pod -n <namespace> |  awk '/<pattern>/{print $1}') -f
 ```
 
 **Example:**
 
-```
+```console
 kubectl logs -n kube-system $(kubectl get pod -n kube-system |  awk '/kube-proxy*/{print $1}') -f
+```
+
+### See logs of all container in a pod
+
+Use `--all-containers` flag.
+
+```console
+kubectl logs my-pod --all-containers
+```
+
+### See logs of a container that has crashed
+
+Use `--previous` (short `-p`) flag.
+
+```console
+kubectl logs my-pod --previous
 ```
