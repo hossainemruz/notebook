@@ -39,8 +39,8 @@ Now, let's assume we have fixed more things and want to release to 8.0.Z patch v
 
 git checkout release-8.0
 git checkout -b cherrypick-8.0.Z
-git cherrypick <commit_hash_1_from_master>
-git cherrypick <commit_hash_2_from_master>
+git cherrypick <commit_hash_1_from_master> (if conflict happens, fix here)
+git cherrypick <commit_hash_2_from_master> (if conflict happens, fix here)
 
 Now, open a pr against the release-8.0 branch. Merge this into release-8.0 branch and apply tag 8.0.Z. Then write release notes in GitHub.
 
