@@ -25,7 +25,7 @@ We want to release the following versions:
 Make `5.7.25` specific changes in a temporary branch (i.e. `prep-5.7.23`). Then make PR against `master`. Then merge the PR in master.  OR, directly push the changes in `master`.
 
 
-Then, create a branch `release-5.7` from master. Tag this branch as `5.7.25`.
+Then, create a branch `release-5.7` from master. Tag this branch as `5.7.25`. (and tag/re-tag 5.7)
 
 **Release 8.0.3**
 
@@ -33,17 +33,18 @@ Make `8.0.3` specific change to `master` (through a PR or directly). Then, creat
 
 
 
-**Release 0.8.14:**
+**Release 8.0.14:**
 
-Method-1: 
+Now, let's assume we have fixed more things and want to release to 8.0.Z patch version. Now, create a cherrypick-8.0.Z branch from release-8.0 branch. Now, cherry pick the commits that you want to include in this patch release from master.
 
-Make `8.0.14` specific change to `master` (through a PR or directly). Then, Pull the changes to `release-8.0` branch tag it as `8.0.14`.
+git checkout release-8.0
+git checkout -b cherrypick-8.0.Z
+git cherrypick <commit_hash_1_from_master>
+git cherrypick <commit_hash_2_from_master>
 
+Now, open a pr against the release-8.0 branch. Merge this into release-8.0 branch and apply tag 8.0.Z. Then write release notes in GitHub.
 
-Method-2: 
-
-Make `8.0.14` specific change to `release-8.0` (through a PR or directly). Then tag it as `8.0.14`. In this case, `master` will not have `8.0.14`  specific changes.
-
+{"version": "8.0.1", "branch": "8.0.1-hugofix"}
 
 ## Different Cases
 
