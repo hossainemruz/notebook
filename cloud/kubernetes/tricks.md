@@ -10,6 +10,7 @@
     - [See log of the pods that match a pattern](#see-log-of-the-pods-that-match-a-pattern)
     - [See logs of all container in a pod](#see-logs-of-all-container-in-a-pod)
     - [See logs of a container that has crashed](#see-logs-of-a-container-that-has-crashed)
+    - [List all resources and subresources of cluster](#list-all-resources-and-subresources-of-cluster)
 
 <!-- /code_chunk_output -->
 
@@ -98,4 +99,18 @@ Use `--previous` (short `-p`) flag.
 
 ```console
 kubectl logs my-pod --previous
+```
+
+### List all resources and subresources of cluster
+
+```bash
+_list=($(kubectl get --raw / | grep "^    \"/api" | sed 's/[",]//g'))
+for _api in ${_list[@]}; do
+    _aruyo=$(kubectl get --raw ${_api} | jq .resources)
+    if [ "x${_aruyo}" != "xnull" ]; then
+        echo
+        echo "===${_api}==="
+        kubectl get --raw ${_api} | jq -r ".resources[].name"
+    fi
+done
 ```
